@@ -14,7 +14,7 @@ type Dao struct {
 var ErrRecordNotFound = errors.New("record not found")
 
 func (d *Dao) FindData(key int) (data string, err error) {
-    err = sqlxxx()
+    _, err ：= sqlxxx()
 	if errors.Is(err, sql.ErrNoRows) {
         err = ErrRecordNotFound
 	}
@@ -46,7 +46,9 @@ func main() {
 	data, err := s.FindData(1)
 	if erros.Is(err, ErrRecordNotFond) {
 		fmt.Printf("%+v\n", err)
-	} 
+	} else if err != nil {
+		fmt.Printf("%+v\n", err)
+	}
 }
 ~~~
 
