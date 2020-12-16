@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package userapp.v1;
+
+option go_package = ".;v1";
+
+service User {
+  rpc QueryUserInfo (QueryUserParams) returns (QueryUserResp) {}
+}
+
+message QueryUserParams {
+  string id = 1;
+}
+
+message QueryUserResp {
+  string id = 1;
+  string name = 2;
+  string desc = 3;
+}
